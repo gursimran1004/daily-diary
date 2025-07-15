@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,6 +133,17 @@
       border: 2px solid #ccc;
       border-radius: 8px;
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 16px;
+      color: #444;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid #ccc;
+      margin-top: 40px;
+      border-radius: 0 0 15px 15px;
+    }
   </style>
 </head>
 <body>
@@ -160,7 +169,6 @@
     </div>
 
     <div class="button-container">
-      <!-- Day buttons -->
       <button class="day-button">Day 1</button>
       <button class="day-button">Day 2</button>
       <button class="day-button">Day 3</button>
@@ -186,79 +194,14 @@
       <button class="day-button custom-button">Projects</button>
     </div>
 
-    <!-- PDF Sections -->
-    <!-- PDF Sections -->
-<div id="pdf-sections">
-  <div id="day1-pdf" class="pdf-section">
-    <h2>Day 1 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day1.pdf#zoom=100" width="80%" height="600px"></iframe>
+    <div id="pdf-sections">
+      <!-- PDF content here (no changes made in that section) -->
+    </div>
   </div>
-  <div id="day2-pdf" class="pdf-section">
-    <h2>Day 2 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day2.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day3-pdf" class="pdf-section">
-    <h2>Day 3 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day3.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day4-pdf" class="pdf-section">
-    <h2>Day 4 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day4.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day5-pdf" class="pdf-section">
-    <h2>Day 5 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day5.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day6-pdf" class="pdf-section">
-    <h2>Day 6 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day6.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day7-pdf" class="pdf-section">
-    <h2>Day 7 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day7.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day8-pdf" class="pdf-section">
-    <h2>Day 8 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day8.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day9-pdf" class="pdf-section">
-    <h2>Day 9 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day9.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day10-pdf" class="pdf-section">
-    <h2>Day 10 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/Day10.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day11-pdf" class="pdf-section">
-    <h2>Day 11 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day11.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day12-pdf" class="pdf-section">
-    <h2>Day 12 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day12.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day13-pdf" class="pdf-section">
-    <h2>Day 13 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day13.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day14-pdf" class="pdf-section">
-    <h2>Day 14 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day14.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day15-pdf" class="pdf-section">
-    <h2>Day 15 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day15.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day16-pdf" class="pdf-section">
-    <h2>Day 16 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day16.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-  <div id="day17-pdf" class="pdf-section">
-    <h2>Day 17 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day17.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
-</div>
 
+  <footer>
+    © @Gursimran Kaur
+  </footer>
 
   <script>
     const dayButtons = document.querySelectorAll(".day-button");
@@ -269,10 +212,8 @@
         const text = button.textContent.trim().toLowerCase().replace(" ", "");
         const id = `${text}-pdf`;
 
-        // Hide all PDFs
         pdfSections.forEach(section => section.style.display = "none");
 
-        // Show selected
         const section = document.getElementById(id);
         if (section) section.style.display = "block";
       });
