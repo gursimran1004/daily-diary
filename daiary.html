@@ -1,468 +1,282 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training TR-102 Report</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('BG.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to right, #000000, #434343);
-            padding: 10px 20px;
-            color: #fff;
-            border-radius: 10px 10px 0 0;
-        }
-        header img {
-            height: 50px;
-            margin: 5px 0;
-            max-width: 100%;
-        }
-        header .home-button {
-            background-color: #3c566f;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 5px 0;
-        }
-        header .home-button:hover {
-            background-color: #000000;
-        }
-        nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        nav a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .project-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-        .project-button {
-            background-color: #888954;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 5px;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-            padding: 10px 20px;
-        }
-        .project-button:hover {
-            background-color: #666;
-        }
-        nav a:hover {
-            background-color: #2980b9;
-        }
-        .section {
-            display: none;
-        }
-        .section.active {
-            display: block;
-        }
-        h1, h2, p {
-            text-align: center;
-        }
-        .pdf-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .pdf-container iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .gallery {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-        .gallery img {
-            width: 100%;
-            display: none;
-            transition: opacity 1s ease-in-out;
-        }
-        .gallery img.active {
-            display: block;
-            opacity: 1;
-        }
-        .gallery .caption {
-            text-align: center;
-            margin-top: 10px;
-            color: #2c3e50;
-            font-size: 16px;
-            display: none;
-        }
-        .gallery .caption.active {
-            display: block;
-        }
-        .certificate-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .certificate-container img {
-            max-width: 50%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            background: linear-gradient(to right, #434343, #000000);
-            color: #fff;
-            border-radius: 0 0 10px 10px;
-        }
-        footer a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-            header .home-button {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-            header img {
-                height: 40px;
-            }
-            .pdf-container iframe {
-                height: 400px;
-            }
-            .gallery img {
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Training Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("6.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.85);
+      margin: 30px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .navbar {
+      background-color: rgba(30, 30, 30, 0.85);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .navbar img {
+      height: 70px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-btn {
+      background-color: #1e3a5f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .header {
+      text-align: center;
+      color: #333;
+      padding: 40px 10px;
+    }
+
+    .title {
+      font-size: 26px;
+      margin: 10px 0;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      margin: 0 0 5px;
+    }
+
+    .top-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .top-buttons .blue-btn {
+      background-color: #e65100;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 10px 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .day-button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .day-button:hover {
+      background-color: #1976D2;
+    }
+
+    .custom-button {
+      background-color: #6a1b9a;
+    }
+
+    .custom-button:hover {
+      background-color: #4a148c;
+    }
+
+    .separate-button {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .pdf-section {
+      display: none;
+      padding: 20px;
+      text-align: center;
+    }
+
+    iframe {
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="https://www.gndec.ac.in/"><img src="gndecLogo.png" alt="GNDEC Logo"></a>
-            <a href="#" class="home-button" onclick="showSection('home')">Home</a>
-            <a href="https://prasarbharati.gov.in/doordarshan/"><img src="ddlogo.png" alt="DD Logo"></a>
-        </header>
-        
-
-        <section id="home" class="section active">
-            <h1>Training TR-102 Report</h1>
-            <p>By Srijan Singh, URN 2203565 <br> Guru Nanak Dev Engineering College Ludhiana</p>
-            <h2>4 Week training at <br> Doordarshan Bhawan New Delhi</h2>
-        </section>
-        <nav>
-            <a style="background-color: rgb(0, 199, 156);" href="#" onclick="showSection('certificate')">Training Certificate</a>
-            <br>
-            <a style="background-color: rgb(0, 199, 156);" href="#" onclick="showSection('Final-Report')">Final Report</a>
-            <br>
-            <a href="#" onclick="showSection('day1')">Day 1</a>
-            <a href="#" onclick="showSection('day2')">Day 2</a>
-            <a href="#" onclick="showSection('day3')">Day 3</a>
-            <a href="#" onclick="showSection('day4')">Day 4</a>
-            <a href="#" onclick="showSection('day5')">Day 5</a>
-            <a href="#" onclick="showSection('day6')">Day 6</a>
-            <a href="#" onclick="showSection('day7')">Day 7</a>
-            <a href="#" onclick="showSection('day8')">Day 8</a>
-            <a href="#" onclick="showSection('day9')">Day 9</a>
-            <a href="#" onclick="showSection('day10')">Day 10</a>
-            <a href="#" onclick="showSection('day11')">Day 11</a>
-            <a href="#" onclick="showSection('day12')">Day 12</a>
-            <a href="#" onclick="showSection('day13')">Day 13</a>
-            <a href="#" onclick="showSection('day14')">Day 14</a>
-            <a href="#" onclick="showSection('day15')">Day 15</a>
-            <a href="#" onclick="showSection('day16')">Day 16</a>
-            <!-- <a href="#" onclick="showsection('day17')">Day 17</a> -->
-            <br>
-            <a href="#" onclick="showSection('gallery')">Gallery</a>
-            <!-- Add more   more tat wat you say links for additional days if needed -->
-             <br>
-            <a style="background-color: rgb(13, 0, 113);" href="#" onclick="showSection('projects')">Projects</a>
-        </nav>
-        <section id="certificate" class="section">
-            <h1>Certificate</h1>
-            <div class="certificate-container">
-                <img src="TC.jpg" alt="Training Certificate">
-            </div>
-        </section>  
-        <section id="Final-Report" class="section">
-            <h1>Final Report</h1>
-            <div class="pdf-container">
-                <iframe src="https://github.com/gursimran1004/daily-diary/day1.pdf"></iframe>
-            </div>
-        </section>  
-        <section id="day1" class="section">
-            <h1>Training Report Day 1</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day2.pdf"></iframe>
-                <iframe src=""></iframe>
-
-            </div>
-        </section>
-
-        <section id="day2" class="section">
-            <h1>Training Report Day 2</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day2.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day3" class="section">
-            <h1>Training Report Day 3</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day3.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day4" class="section">
-            <h1>Training Report Day 4</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day4.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day5" class="section">
-            <h1>Training Report Day 5</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day5.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day6" class="section">
-            <h1>Training Report Day 6</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day6.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day7" class="section">
-            <h1>Training Report Day 7</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day7.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day8" class="section">
-            <h1>Training Report Day 8</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day8.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day9" class="section">
-            <h1>Training Report Day 9</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day9.pdf"></iframe>
-                <iframe src=""></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day10" class="section">
-            <h1>Training Report Day 10</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/Day10.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day11" class="section">
-            <h1>Training Report Day 11</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day11.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day12" class="section">
-            <h1>Training Report Day 12</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day12.pdf"></iframe>
-                <iframe src=""></iframe>
-            </div>
-        </section>
-
-        <section id="day13" class="section">
-            <h1>Training Report Day 13</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day13.pdf"></iframe>
-            </div>
-        </section>
-
-        <section id="day14" class="section">
-            <h1>Training Report Day 14</h1>
-            <div class="pdf-container">
-                <iframe src="https://gursimran1004.github.io/daily-diary/day14.pdf"></iframe>
-            </div>
-        </section>
-
-        <section id="day15" class="section">
-            <h1>Training Report Day 15</h1>
-            <div class="pdf-container">
-                <iframe src="https://srijansingh9.github.io/Training-102-Report/Day15.pdf"></iframe>
-            </div>  
-        </section>
-
-        <section id="day16" class="section">
-            <h1>Training Report Day 16</h1>
-            <div class="pdf-container">
-                <iframe src="https://srijansingh9.github.io/Training-102-Report/Day16.pdf"></iframe>
-            </div>
-        </section>
-
-        <section id="gallery" class="section">
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <img src="IngestRoom1.jpg" alt="Ingest Room">
-                <div class="caption">Ingest Room</div>
-                <img src="DDIndia Studio.jpg" alt="DD India Studio"  class="active">
-                <div class="caption">DD India Studio</div>
-                <img src="TP.jpg" alt="TP">
-                <div class="caption">TelePrompter</div>
-                <img src="IngestRoom2.jpg" alt="Ingest Room">
-                <div class="caption">Ingest Room</div>
-                <img src="Studio and jimmy jib.jpg" alt="Studio and jimmy jib">
-                <div class="caption">Studio and Jimmy Jib (Camera Crane)</div>
-                <img src="News Studio with news anchor's perspective.jpg" alt="News Studio with news anchor's perspective">
-                <div class="caption">News Studio with news anchor's perspective</div>
-                <img src="Wireless Lapel Mic.jpg" alt="Wireless Lapel Mic">
-                <div class="caption">Wireless Lapel Mic</div>
-                <img src="Lapel Mic.jpg" alt="Lapel Mic">
-                <div class="caption">Lapel Mic (Used by News Anchor ...)</div>
-                <img src="PCR.jpg" alt="PCR">
-                <div class="caption">PCR</div>
-                <img src="ENPS SR.jpg" alt="ENPS Server Room">
-                <div class="caption">ENPS Server Room</div>
-                <img src="AP ENPS.jpg" alt="AP ENPS Dashboard">
-                <div class="caption">AP ENPS Dashboard</div>
-                <img src="SpectraDashboard.jpg" alt="Spectra Black Pearl Dashboard">
-                <div class="caption">Spectra Black Pearl Dashboard</div>
-                <img src="StuderVista.jpg" alt="Studer Vista Black Pearl ">
-                <div class="caption">VISTA Studer 1 Black Edition Digital Mixing Console</div>
-                <img src="SpectraDashboard1.jpg" alt="Spectra Black Pearl Dashboard">
-                <div class="caption">Spectra Black Pearl Dashboard</div>
-                <img src="MeAtStudio.jpg" alt="Me At Studio"> 
-                <div class="caption">Me At Studio</div>
-                <img src="Earth Station Diagram.jpg" alt="Earth Station Diagram">   
-                <div class="caption">Earth Station Diagram</div>
-                <img scr="Dish At Earth Station for uplinking as well as downlinking.jpg" alt="Dish At Earth Station for uplinking as well as downlinking">
-                <div class="caption">Dish At Earth Station for uplinking as well as downlinking</div>
-        </section>
-        <section id="projects" class="section">
-            <h1>Projects</h1>
-            <ul>
-            <li>
-            <div class="project-buttons">
-                <a href="https://srijansingh9.github.io/Teleprompter/" class="project-button">Teleprompter</a>
-            </div>
-            <div class="project-details">
-            
-                <h2>Teleprompter Project</h2>
-                <p>This project is a simple web-based teleprompter created for demonstrative purposes. It showcases the basic functionality of a teleprompter using HTML, CSS, and JavaScript.</p>
-                <b>Features</b>
-                <ol>
-                    <li>It has option to change the text font size to accordingly make it easy to read from a distance.</li>
-                    <li>It can scroll the text at +ve as well as -ve speed that can be adjusted using the speed control bar.</li>
-                    <li>It provides controls to start, pause, and toggle fullscreen .</li>
-                    <li>It allows the user to input their own text as well as selecting a text file to be displayed on the teleprompter.</li>
-                </ol>
-            </li>
-            <li>
-                <div class="project-buttons">
-                    <a href="https://github.com/ebu/awesome-broadcasting" class="project-button" onclick="showSection('NRCS')">Creating our own NRCS</a>
-                </div>
-                <section id="NRCS" class="project-details">
-                    <h1>Creating our own NRCS</h1>
-                    <div class="pdf-container">
-                        <iframe src="https://srijansingh9.github.io/Training-102-Report/Creating our own NRCS.pdf"></iframe>
-                    </div>
-                </section>
-
-            </li>
-            </ul>
-            </div>
-        </section>
-
-        <footer>
-           <a href="https://www.linkedin.com/in/srijan-singh-559258255/"> &copy; Srijan Singh</a>
-        </footer>
+  <div class="overlay">
+    <div class="navbar">
+      <img src="C:\Users\gurjo\OneDrive\Desktop\DAILY DAIARY\9.png" alt="College Logo">
+      <div class="nav-buttons">
+        <button class="nav-btn">Home</button>
+      </div>
+      <img src="C:\Users\gurjo\OneDrive\Desktop\DAILY DAIARY\7.png" alt="Institute Logo">
     </div>
-    <script>
-        function showSection(id) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(id).classList.add('active');
-        }
 
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.gallery img');
-        const captions = document.querySelectorAll('.gallery .caption');
+    <div class="header">
+      <h1>Training TR-102 Report</h1>
+      <p class="subtitle">By Gursimran Kaur, URN 2435227</p>
+      <p class="subtitle">Guru Nanak Dev Engineering College Ludhiana</p>
+      <p class="title">4 Week Training at STEP(GNE), Ludhiana</p>
+    </div>
 
-        function showSlide(index) {
-            images.forEach((img, i) => {
-                img.classList.remove('active');
-                captions[i].style.display = 'none';
-            });
-            images[index].classList.add('active');
-            captions[index].style.display = 'block';
-        }
+    <div class="top-buttons">
+      <button class="blue-btn">Training Certificate</button>
+      <button class="blue-btn">Final Report</button>
+    </div>
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % images.length;
-            showSlide(currentIndex);
-        }
+    <div class="button-container">
+      <!-- Day buttons -->
+      <button class="day-button">Day 1</button>
+      <button class="day-button">Day 2</button>
+      <button class="day-button">Day 3</button>
+      <button class="day-button">Day 4</button>
+      <button class="day-button">Day 5</button>
+      <button class="day-button">Day 6</button>
+      <button class="day-button">Day 7</button>
+      <button class="day-button">Day 8</button>
+      <button class="day-button">Day 9</button>
+      <button class="day-button">Day 10</button>
+      <button class="day-button">Day 11</button>
+      <button class="day-button">Day 12</button>
+      <button class="day-button">Day 13</button>
+      <button class="day-button">Day 14</button>
+      <button class="day-button">Day 15</button>
+      <button class="day-button">Day 16</button>
+    </div>
 
-        setInterval(nextSlide, 4000); // Change image every 4 seconds
-    </script>
+    <div class="separate-button">
+      <button class="day-button custom-button">Gallery</button>
+    </div>
+    <div class="separate-button">
+      <button class="day-button custom-button">Projects</button>
+    </div>
+
+    <!-- PDF Sections -->
+    <!-- PDF Sections -->
+<div id="pdf-sections">
+  <div id="day1-pdf" class="pdf-section">
+    <h2>Day 1 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day1.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day2-pdf" class="pdf-section">
+    <h2>Day 2 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day2.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day3-pdf" class="pdf-section">
+    <h2>Day 3 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day3.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day4-pdf" class="pdf-section">
+    <h2>Day 4 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day4.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day5-pdf" class="pdf-section">
+    <h2>Day 5 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day5.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day6-pdf" class="pdf-section">
+    <h2>Day 6 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day6.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day7-pdf" class="pdf-section">
+    <h2>Day 7 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day7.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day8-pdf" class="pdf-section">
+    <h2>Day 8 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day8.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day9-pdf" class="pdf-section">
+    <h2>Day 9 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day9.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day10-pdf" class="pdf-section">
+    <h2>Day 10 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/Day10.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day11-pdf" class="pdf-section">
+    <h2>Day 11 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day11.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day12-pdf" class="pdf-section">
+    <h2>Day 12 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day12.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day13-pdf" class="pdf-section">
+    <h2>Day 13 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day13.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day14-pdf" class="pdf-section">
+    <h2>Day 14 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day14.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day15-pdf" class="pdf-section">
+    <h2>Day 15 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day15.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day16-pdf" class="pdf-section">
+    <h2>Day 16 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day16.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+  <div id="day17-pdf" class="pdf-section">
+    <h2>Day 17 Report</h2>
+    <iframe src="https://gursimran1004.github.io/daily-diary/day17.pdf#zoom=100" width="80%" height="600px"></iframe>
+  </div>
+</div>
+
+
+  <script>
+    const dayButtons = document.querySelectorAll(".day-button");
+    const pdfSections = document.querySelectorAll(".pdf-section");
+
+    dayButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const text = button.textContent.trim().toLowerCase().replace(" ", "");
+        const id = `${text}-pdf`;
+
+        // Hide all PDFs
+        pdfSections.forEach(section => section.style.display = "none");
+
+        // Show selected
+        const section = document.getElementById(id);
+        if (section) section.style.display = "block";
+      });
+    });
+  </script>
 </body>
 </html>
