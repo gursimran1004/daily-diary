@@ -248,35 +248,61 @@
   </div>
   <div id="day15-pdf" class="pdf-section">
     <h2>Day 15 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day15.pdf#zoom=100" width="80%" height="600px"></iframe>
+    <iframe src="https://gursimran1004.github.io/daily-diary/Day15.pdf#zoom=100" width="80%" height="600px"></iframe>
   </div>
   <div id="day16-pdf" class="pdf-section">
     <h2>Day 16 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day16.pdf#zoom=100" width="80%" height="600px"></iframe>
+    <iframe src="https://gursimran1004.github.io/daily-diary/Day16.pdf#zoom=100" width="80%" height="600px"></iframe>
   </div>
-  <div id="day17-pdf" class="pdf-section">
-    <h2>Day 17 Report</h2>
-    <iframe src="https://gursimran1004.github.io/daily-diary/day17.pdf#zoom=100" width="80%" height="600px"></iframe>
-  </div>
+  
+  <!-- Gallery Section -->
+<div id="gallery-pdf" class="pdf-section">
+  <h2>Training Gallery</h2>
+  <img src="https://gursimran1004.github.io/daily-diary/gallery/img1.jpg" width="40%" style="margin:10px; border-radius:10px;">
+  <img src="https://gursimran1004.github.io/daily-diary/gallery/img2.jpg" width="40%" style="margin:10px; border-radius:10px;">
+  <!-- Add more images as needed -->
+</div>
+
+<!-- Projects Section -->
+<div id="projects-pdf" class="pdf-section">
+  <h2>Project Work</h2>
+  <p>
+    <strong>Project</strong>
+    <a href="https://gursimran1004.github.io/daily-diary/project.pdf" target="_blank">Download PDF</a>
+  </p>
+  <p>
+    <strong> Project Folder:</strong>
+    <a href="https://gursimran1004.github.io/daily-diary/project-folder/" target="_blank">Open Folder</a>
+  </p>
+</div>
 
 
   <script>
-    const dayButtons = document.querySelectorAll(".day-button");
-    const pdfSections = document.querySelectorAll(".pdf-section");
+  const dayButtons = document.querySelectorAll(".day-button");
+  const pdfSections = document.querySelectorAll(".pdf-section");
+  const galleryBtn = document.getElementById("gallery-btn");
+  const projectsBtn = document.getElementById("projects-btn");
 
-    dayButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const text = button.textContent.trim().toLowerCase().replace(" ", "");
-        const id = `${text}-pdf`;
+  dayButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const text = button.textContent.trim().toLowerCase().replace(" ", "");
+      const id = `${text}-pdf`;
 
-        // Hide all PDFs
-        pdfSections.forEach(section => section.style.display = "none");
+      pdfSections.forEach(section => section.style.display = "none");
 
-        // Show selected
-        const section = document.getElementById(id);
-        if (section) section.style.display = "block";
-      });
+      const section = document.getElementById(id);
+      if (section) section.style.display = "block";
     });
-  </script>
-</body>
+  });
+
+  galleryBtn.addEventListener("click", () => {
+    pdfSections.forEach(section => section.style.display = "none");
+    document.getElementById("gallery-pdf").style.display = "block";
+  });
+
+  projectsBtn.addEventListener("click", () => {
+    pdfSections.forEach(section => section.style.display = "none");
+    document.getElementById("projects-pdf").style.display = "block";
+  });
+</script>
 </html>
